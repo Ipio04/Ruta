@@ -14,6 +14,32 @@ export const Navbar = () => {
         });
     };
 
+    const onImage = () => {
+        navigate('/sorpresa', {
+            replace:true,
+            state: {
+				logged: true,
+			},
+        });
+    };
+
+    const onVideo = () => {
+        navigate('/video', {
+            replace:true,
+            state: {
+				logged: true,
+			},
+        });
+    };
+    const onDash = () => {
+        navigate('/dashboard', {
+            replace:true,
+            state: {
+				logged: true,
+			},
+        });
+    };
+
     return (
         <>
         
@@ -27,6 +53,15 @@ export const Navbar = () => {
 						<span className='username'>{state?.name}</span>
 						<button className='btn-logout' onClick={onLogout}>
 							Cerrar sesión
+						</button>
+                        <button className='btn-carding' onClick={onVideo}>
+							Video
+						</button>
+                        <button className='btn-carding' onClick={onImage}>
+							Imagen
+						</button>
+                        <button className='btn-carding' onClick={onDash}>
+							Dash
 						</button>
                       
 					</div>
@@ -42,6 +77,11 @@ export const Navbar = () => {
            <Outlet/>
         </>
     )
+}
+
+
+
+
 }
 
 
